@@ -1,39 +1,101 @@
-/* styles.css */
 
-/* Body as a flex container for header, main, footer (column) */
+
 body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4; /* Light gray background */
+    color: #333; /* Dark gray text */
+    line-height: 1.6;
+    margin: 0;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
-    min-height: 100vh; /* Ensures body takes full viewport height for column layout to work */
-    margin: 0; /* Remove default body margin */
 }
 
-/* Main as a flex item within body, taking auto height/width, and also a flex container for article, aside (row) */
+/* Header styling */
+header {
+    background-color: #333; /* Dark background */
+    color: #fff; /* White text */
+    padding: 1rem 0;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    display: flex; /* Make header a flex container to align logo and nav */
+    align-items: center; /* Vertically center items */
+    justify-content: space-between; /* Push logo left, nav right */
+    padding: 10px 20px; /* Add horizontal padding */
+}
+
+header h1 {
+    margin: 0; /* Remove default margin from h1 */
+    font-size: 2em;
+}
+
+/* Navigation styling */
+nav ul {
+    list-style: none; /* Remove bullet points */
+    padding: 0;
+    margin: 0;
+    display: flex; /* Make nav list a flex container for horizontal items */
+    align-items: center;
+}
+
+nav ul li {
+    margin: 0 15px; /* Spacing between nav items */
+}
+
+nav ul li a {
+    color: #fff; /* White links */
+    text-decoration: none; /* Remove underline */
+    font-weight: bold;
+    transition: color 0.3s ease; /* Smooth hover effect */
+}
+
+nav ul li a:hover {
+    color: #00bcd4; /* Light blue on hover */
+}
+
+/* Main content styling */
 main {
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    margin: 20px auto; /* Center main content with some margin */
+    max-width: 1200px; /* Max width for main content */
+    border-radius: 8px; /* Slightly rounded corners */
     display: flex;
     flex-direction: row;
-    flex: auto; /* Ensures main takes up available space in the column */
+    flex: auto;
 }
 
-/* Article takes 2/3 of main's width */
+/* Article and Aside styling */
 article {
-    flex: 2; /* Occupies 2 parts of the available space */
-    overflow-y: auto; /* Allows vertical scrolling within article if content overflows */
-    /* Optional: Add a border to visualize the space */
-    /* border: 1px solid blue; */
+    padding-right: 20px; /* Spacing between article and aside */
+    border-right: 1px solid #eee; /* Light border to separate article/aside */
+    flex: 2;
+    overflow-y: auto;
 }
 
-/* Aside takes 1/3 of main's width */
 aside {
-    flex: 1; /* Occupies 1 part of the available space */
-    overflow-y: auto; /* Allows vertical scrolling within aside if content overflows */
-    /* Optional: Add a border to visualize the space */
-    /* border: 1px solid green; */
+    padding-left: 20px; /* Spacing between article and aside */
+    background-color: #f9f9f9; /* Slightly different background for aside */
+    flex: 1;
+    overflow-y: auto;
 }
 
-/* Optional: Add some basic styling for header/footer for visibility */
-header, footer {
-    /* border: 1px solid red; */
-    padding: 10px;
+/* Footer styling */
+footer {
+    background-color: #333;
+    color: #fff;
     text-align: center;
+    padding: 1rem 0;
+    margin-top: auto; /* Pushes footer to the bottom in flex column */
+    box-shadow: 0 -2px 5px rgba(0,0,0,0.2);
+}
+
+/* Styles for content within article (example) */
+article h2 {
+    color: #0056b3; /* Darker blue for article headings */
+}
+
+article p {
+    text-align: justify; /* Justify text for better readability */
 }
